@@ -124,6 +124,18 @@
       animation: fadeUp 0.8s ease-out 0.6s both;
     }
 
+    .hero-bottle{
+    width:220px;
+    max-width:75%;
+    margin:40px auto 35px;
+    display:block;
+    transition:transform .3s ease;
+}
+
+.hero-bottle:hover{
+    transform:translateY(-4px);
+}
+    
     @keyframes fadeUp {
       from {
         opacity: 0;
@@ -189,6 +201,11 @@
       Launching soon
     </p>
 
+    <img
+      src="images/bottle.png"
+      alt="Arratio fragrance bottle"
+      class="hero-bottle">
+    
     <nav class="links" aria-label="Social links">
       <a
         href="https://www.instagram.com/arratio.fragrances/"
