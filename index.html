@@ -1,190 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Arratio — Coming Soon</title>
+  <title>ARRATIO | Independent Fragrance</title>
 
   <meta
     name="description"
-    content="Arratio is an independent fragrance house creating timeless compositions crafted to leave a lasting impression."
-  >
+    content="ARRATIO is an independent fragrance house creating modern compositions with character, balance, and intention."
+  />
 
   <style>
     :root {
       --background: #f4f1eb;
       --text: #171717;
       --muted: #66625d;
+      --line: rgba(23, 23, 23, 0.18);
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html,
-    body {
       margin: 0;
-      min-height: 100%;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      min-height: 100vh;
+      background: var(--background);
+      color: var(--text);
+      font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ---------------- NAVIGATION ---------------- */
+
+    .nav {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.15rem;
+      letter-spacing: 0.22em;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.72;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    /* ---------------- GENERAL ---------------- */
+
+    section {
+      padding: 100px 30px;
+    }
+
+    .section-inner {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.8;
+    }
+
+    .divider {
+      width: 42px;
+      height: 1px;
+      background: var(--text);
+      opacity: 0.5;
+      margin: 28px auto;
+    }
+
+    /* ---------------- HERO ---------------- */
+
+    .hero {
+      min-height: calc(100vh - 85px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 28px;
-      background: var(--background);
-      color: var(--text);
-      font-family: Baskerville, "Baskerville Old Face",
-        "Times New Roman", serif;
+      padding-top: 40px;
+      padding-bottom: 80px;
     }
 
-    main {
+    .hero-inner {
       width: 100%;
-      max-width: 760px;
+      max-width: 850px;
+      margin: 0 auto;
       text-align: center;
-      transform: translateY(-15px);
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5.8vw, 3.7rem);
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-indent: 0.2em;
-      animation: fadeUp 0.8s ease-out both;
+    .brand-name {
+      font-size: clamp(3.7rem, 10vw, 7rem);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      margin-right: -0.18em;
+      line-height: 1;
     }
 
     .tagline {
-      margin: 28px 0 0;
-      font-size: clamp(1rem, 2.2vw, 1.25rem);
-      letter-spacing: 0.08em;
-      animation: fadeUp 0.8s ease-out 0.12s both;
-    }
-
-    .description {
-      max-width: 470px;
-      margin: 20px auto 0;
+      margin-top: 24px;
+      font-size: 1.15rem;
+      font-style: italic;
       color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      animation: fadeUp 0.8s ease-out 0.24s both;
     }
 
-    .status {
-      margin-top: 36px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
+    .hero-description {
+      max-width: 570px;
+      margin: 26px auto 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .hero-image {
+      display: block;
+      width: min(250px, 60vw);
+      height: auto;
+      margin: 45px auto 0;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 38px;
+      padding: 12px 24px;
+      border: 1px solid var(--text);
+      font-size: 0.76rem;
       text-transform: uppercase;
-      animation: fadeUp 0.8s ease-out 0.36s both;
+      letter-spacing: 0.14em;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .links {
-      margin-top: 30px;
+    .hero-button:hover {
+      background: var(--text);
+      color: var(--background);
+    }
+
+    /* ---------------- COLLECTION ---------------- */
+
+    .collection {
+      border-top: 1px solid var(--line);
+    }
+
+    .fragrance-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 70px;
+      margin-top: 70px;
+    }
+
+    .fragrance {
+      text-align: center;
+      padding: 10px 20px;
+    }
+
+    .fragrance-name {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .fragrance-family {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .fragrance-positioning {
+      max-width: 430px;
+      margin: 27px auto 0;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .fragrance-description {
+      max-width: 470px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.85;
+    }
+
+    .notes {
+      margin-top: 27px;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
+    }
+
+    .notes-label {
+      display: block;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 29px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 4px;
+    }
+
+    /* ---------------- ABOUT ---------------- */
+
+    .about {
+      border-top: 1px solid var(--line);
+    }
+
+    .about-copy {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .about-copy p + p {
+      margin-top: 20px;
+    }
+
+    /* ---------------- CONTACT ---------------- */
+
+    .contact {
+      border-top: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 35px;
       display: flex;
       justify-content: center;
-      gap: 26px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.8s ease-out 0.48s both;
-    }
-
-    .links a {
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.76rem;
+      gap: 30px;
+      font-size: 0.82rem;
       letter-spacing: 0.12em;
-      text-decoration: none;
       text-transform: uppercase;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 4px;
-      transition:
-        border-color 0.2s ease,
-        opacity 0.2s ease;
     }
 
-    .links a:hover,
-    .links a:focus {
-      border-bottom-color: var(--text);
-      opacity: 0.7;
+    .social-links a {
+      border-bottom: 1px solid transparent;
+      padding-bottom: 3px;
     }
+
+    .social-links a:hover {
+      border-bottom-color: var(--text);
+    }
+
+    /* ---------------- FOOTER ---------------- */
 
     footer {
-      margin-top: 56px;
+      border-top: 1px solid var(--line);
+      padding: 30px;
+      text-align: center;
       color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      animation: fadeUp 0.8s ease-out 0.6s both;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
     }
 
-    .hero-bottle {
-      width: 220px;
-      max-width: 75%;
-      height: auto;
-      margin: 22px auto 24px;
-      display: block;
-      animation: fadeUp 0.8s ease-out 0.48s both;
-      transition: transform 0.3s ease;
+    /* ---------------- ANIMATION ---------------- */
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s ease forwards;
     }
 
-.links {
-  margin-top: 18px;
-}
-
-    hero-bottle:hover{
-        transform:translateY(-4px);
+    .delay-1 {
+      animation-delay: 0.1s;
     }
-    
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+
     @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 24px;
+    /* ---------------- MOBILE ---------------- */
+
+    @media (max-width: 760px) {
+      .nav {
+        padding: 22px 20px;
       }
 
-      main {
-        transform: translateY(-10px);
+      .nav-links {
+        gap: 14px;
+        font-size: 0.67rem;
       }
 
-      h1 {
-        font-size: clamp(2rem, 13vw, 3.2rem);
-        letter-spacing: 0.15em;
-        text-indent: 0.15em;
+      .nav-links a:first-child {
+        display: none;
       }
 
-      .description {
-        font-size: 0.9rem;
+      section {
+        padding: 75px 22px;
       }
 
-      footer {
-        margin-top: 46px;
+      .hero {
+        min-height: auto;
+        padding-top: 75px;
+        padding-bottom: 90px;
+      }
+
+      .brand-name {
+        letter-spacing: 0.12em;
+        margin-right: -0.12em;
+      }
+
+      .fragrance-grid {
+        grid-template-columns: 1fr;
+        gap: 85px;
+      }
+
+      .fragrance {
+        padding-left: 0;
+        padding-right: 0;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      h1,
-      .tagline,
-      .description,
-      .status,
-      .links,
-      footer {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .fade-up {
+        opacity: 1;
+        transform: none;
         animation: none;
       }
     }
@@ -192,43 +407,200 @@
 </head>
 
 <body>
-  <main>
-    <h1>ARRATIO</h1>
 
-    <p class="tagline">
-      Crafted to be remembered.
-    </p>
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <a href="#home" class="nav-logo">ARRATIO</a>
 
-    <p class="description">
-      An independent fragrance house creating timeless compositions crafted to leave a lasting impression.
-    </p>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <p class="status">
-      Launching soon
-    </p>
 
-    <img
-      src="images/bottle.png"
-      alt="Arratio fragrance bottle"
-      class="hero-bottle">
-    
-    <nav class="links" aria-label="Social links">
-      <a
-        href="https://www.instagram.com/arratio.fragrances/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Instagram
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+
+      <h1 class="brand-name fade-up">ARRATIO</h1>
+
+      <!-- Replace this once settled on the permanent tagline -->
+      <p class="tagline fade-up delay-1">
+        Character, composed.
+      </p>
+
+      <p class="hero-description fade-up delay-2">
+        An independent fragrance house focused on modern compositions,
+        thoughtful formulation, and fragrances designed with character.
+      </p>
+
+      <img
+        src="/images/bottle.png"
+        alt="ARRATIO fragrance bottle"
+        class="hero-image fade-up delay-3"
+      />
+
+      <a href="#collection" class="hero-button fade-up delay-4">
+        Explore the Collection
       </a>
 
-      <a href="mailto:arratio.brand@gmail.com">
-        Contact
-      </a>
-    </nav>
+    </div>
+  </section>
 
-    <footer>
-      © 2026 Arratio
-    </footer>
-  </main>
+
+  <!-- COLLECTION -->
+  <section class="collection" id="collection">
+    <div class="section-inner">
+
+      <p class="section-label">The Collection</p>
+      <h2 class="section-title">Introducing ARRATIO</h2>
+
+      <p class="section-intro">
+        Two distinct compositions created through careful formulation,
+        evaluation, and refinement. The first ARRATIO fragrances are
+        currently preparing for release.
+      </p>
+
+      <div class="fragrance-grid">
+
+        <!-- ASCEND -->
+        <article class="fragrance">
+
+          <h3 class="fragrance-name">Ascend</h3>
+
+          <p class="fragrance-family">
+            Woody Aromatic
+          </p>
+
+          <div class="divider"></div>
+
+          <p class="fragrance-positioning">
+            A modern woody-citrus scent that evolves with a sense of forward momentum.
+          </p>
+
+          <p class="fragrance-description">
+            Ascend moves seamlessly from a bright citrus opening into aromatic
+            spice, fresh florals, and finally musky woods. Bergamot and
+            blackcurrant bring an immediate wave of freshness at the top,
+            while pink peppercorn adds spicy energy through the heart.
+            Patchouli, oakmoss, ambergris, and soft white musk emerge gradually
+            in the drydown, bringing depth to the fragrance as it evolves while
+            maintaining the freshness established from the first spray.
+          </p>
+
+          <div class="notes">
+            <span class="notes-label">Key Notes</span>
+            Bergamot · Pink Peppercorn · Blackcurrant · Patchouli · Oakmoss · Ambergris
+          </div>
+
+          <span class="coming-soon">Coming Soon</span>
+
+        </article>
+
+
+        <!-- RADIANCE -->
+        <article class="fragrance">
+
+          <h3 class="fragrance-name">Radiance</h3>
+
+          <p class="fragrance-family">
+            Floral Woody Musk
+          </p>
+
+          <div class="divider"></div>
+
+          <p class="fragrance-positioning">
+            A luminous floral where fresh greens and airy petals settle into
+            clean musk and soft woods.
+          </p>
+
+          <p class="fragrance-description">
+            Radiance opens with fresh green notes before unfolding into its true heart; an airy
+            bouquet of jasmine, muguet, violet, and delicate florals.
+            Subtle fruit adds brightness through the heart, while cedarwood
+            and clean white musks create a smooth, grounded finish. Light,
+            diffusive, and fresh, Radiance is designed around the clarity and
+            openness of spring and summer.
+          </p>
+
+          <div class="notes">
+            <span class="notes-label">Key Notes</span>
+            Green Leaves · Jasmine · Muguet · Violet · White Musk · Cedarwood
+          </div>
+
+          <span class="coming-soon">Coming Soon</span>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+
+      <p class="section-label">About</p>
+      <h2 class="section-title">ARRATIO</h2>
+
+      <div class="about-copy">
+        <p>
+          ARRATIO is an independent fragrance project built around the process
+          of composition. Each fragrance begins as an idea and develops through
+          repeated formulation, evaluation, aging, and refinement.
+        </p>
+
+        <p>
+          Fragrances are produced in small batches using professional perfumery
+          materials sourced from established industry suppliers, with attention
+          given to balance, performance, and the way each composition develops
+          throughout its wear.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACT / FOLLOW -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+
+      <p class="section-label">Stay Updated</p>
+      <h2 class="section-title">Follow the Launch</h2>
+
+      <p class="section-intro">
+        Follow ARRATIO for formulation updates, first looks at the collection,
+        and information leading up to release.
+      </p>
+
+      <div class="social-links">
+        <a
+          href="https://www.instagram.com/arratio.fragrances/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <!-- Replace YOUR_EMAIL_HERE with the email you want public -->
+        <a href="mailto:arratio.brand@gmail.com">
+          Contact
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 ARRATIO. All rights reserved.
+  </footer>
+
 </body>
 </html>
