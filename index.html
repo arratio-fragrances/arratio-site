@@ -208,6 +208,51 @@
     display: flex;
     flex-direction: column;
     }
+    
+    .fragrance-image-wrap {
+      position: relative;
+      height: 290px;
+      margin-bottom: 35px;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+  /* Soft shadow directly beneath the bottle */
+  .fragrance-image-wrap::after {
+    content: "";
+    position: absolute;
+
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 145px;
+    height: 20px;
+
+    background: rgba(0, 0, 0, 0.13);
+    filter: blur(13px);
+    border-radius: 50%;
+
+    z-index: 0;
+  }
+
+  .fragrance-image {
+    position: relative;
+    z-index: 1;
+
+    max-height: 275px;
+    max-width: 230px;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    /* Very subtle depth around the actual bottle */
+    filter: drop-shadow(0 7px 6px rgba(0, 0, 0, 0.06));
+  }
 
     .fragrance-name {
       font-size: 2rem;
@@ -397,6 +442,21 @@
         padding-left: 0;
         padding-right: 0;
       }
+      
+      .fragrance-image-wrap {
+        height: 245px;
+        margin-bottom: 28px;
+      }
+
+      .fragrance-image {
+        max-height: 230px;
+        max-width: 200px;
+      }
+
+      .fragrance-image-wrap::after {
+        width: 120px;
+        height: 18px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -476,6 +536,14 @@
         <!-- ASCEND -->
         <article class="fragrance">
 
+          <div class="fragrance-image-wrap">
+            <img
+              src="/images/AscendBottle.png"
+              alt="ARRATIO Ascend fragrance bottle"
+              class="fragrance-image"
+            />
+          </div>
+
           <h3 class="fragrance-name">Ascend</h3>
 
           <p class="fragrance-family">
@@ -511,6 +579,14 @@
 
         <!-- RADIANCE -->
         <article class="fragrance">
+
+          <div class="fragrance-image-wrap">
+            <img
+              src="/images/RadianceBottle.png"
+              alt="ARRATIO Radiance fragrance bottle"
+              class="fragrance-image"
+            />
+          </div>
 
           <h3 class="fragrance-name">Radiance</h3>
 
