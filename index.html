@@ -202,8 +202,11 @@
     }
 
     .fragrance {
-      text-align: center;
-      padding: 10px 20px;
+    text-align: center;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: column;
     }
 
     .fragrance-name {
@@ -230,18 +233,22 @@
     }
 
     .fragrance-description {
-      max-width: 470px;
-      margin: 25px auto 0;
-      color: var(--muted);
-      font-size: 0.97rem;
-      line-height: 1.85;
+    max-width: 470px;
+    margin: 25px auto 0;
+    color: var(--muted);
+    font-size: 0.97rem;
+    line-height: 1.85;
+
+    flex-grow: 1;
     }
 
     .notes {
-      margin-top: 27px;
-      font-size: 0.88rem;
-      line-height: 1.8;
-      letter-spacing: 0.02em;
+    margin-top: 38px;
+    min-height: 90px;
+
+    font-size: 0.88rem;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
     }
 
     .notes-label {
@@ -429,7 +436,7 @@
 
       <!-- Replace this once settled on the permanent tagline -->
       <p class="tagline fade-up delay-1">
-        Character, composed.
+        Defined in scent.
       </p>
 
       <p class="hero-description fade-up delay-2">
@@ -493,7 +500,8 @@
 
           <div class="notes">
             <span class="notes-label">Key Notes</span>
-            Bergamot · Pink Peppercorn · Blackcurrant · Patchouli · Oakmoss · Ambergris
+            Bergamot · Pink Peppercorn · Blackcurrant<br>
+            Patchouli · Oakmoss · Ambergris
           </div>
 
           <span class="coming-soon">Coming Soon</span>
@@ -528,7 +536,8 @@
 
           <div class="notes">
             <span class="notes-label">Key Notes</span>
-            Green Leaves · Jasmine · Muguet · Violet · White Musk · Cedarwood
+            Green Leaves · Jasmine · Muguet<br>
+            Violet · White Musk · Cedarwood
           </div>
 
           <span class="coming-soon">Coming Soon</span>
