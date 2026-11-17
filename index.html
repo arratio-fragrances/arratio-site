@@ -202,60 +202,32 @@
     }
 
     .fragrance {
-    text-align: center;
-    padding: 10px 20px;
-
-    display: flex;
-    flex-direction: column;
-    }
-    
-    .fragrance-image-wrap {
-      position: relative;
-      height: 290px;
-      margin-bottom: 35px;
+      text-align: center;
+      padding: 10px 20px;
 
       display: flex;
-      align-items: flex-end;
-      justify-content: center;
+      flex-direction: column;
     }
 
-  /* Soft shadow directly beneath the bottle */
-  .fragrance-image-wrap::after {
-    content: "";
-    position: absolute;
+    /*
+      Product photo container.
+      Both Ascend and Radiance now render at exactly
+      the same visual dimensions.
+    */
+    .fragrance-image-wrap {
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 3 / 2;
+      margin: 0 auto 35px;
+      overflow: hidden;
+    }
 
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    width: 145px;
-    height: 20px;
-
-    background: rgba(0, 0, 0, 0.13);
-    filter: blur(13px);
-    border-radius: 50%;
-
-    z-index: 0;
-  }
-
-  .fragrance-image {
-    position: relative;
-    z-index: 1;
-
-    max-height: 370px;
-    max-width: 250px;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
-
-    /* Very subtle depth around the actual bottle */
-    filter: drop-shadow(0 7px 6px rgba(0, 0, 0, 0.06));
-  }
-
-    .ascend-image {
-      transform: scale(1.11);
+    .fragrance-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .fragrance-name {
@@ -282,22 +254,22 @@
     }
 
     .fragrance-description {
-    max-width: 470px;
-    margin: 25px auto 0;
-    color: var(--muted);
-    font-size: 0.97rem;
-    line-height: 1.85;
+      max-width: 470px;
+      margin: 25px auto 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.85;
 
-    flex-grow: 1;
+      flex-grow: 1;
     }
 
     .notes {
-    margin-top: 38px;
-    min-height: 90px;
+      margin-top: 38px;
+      min-height: 90px;
 
-    font-size: 0.88rem;
-    line-height: 1.8;
-    letter-spacing: 0.02em;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      letter-spacing: 0.02em;
     }
 
     .notes-label {
@@ -446,20 +418,10 @@
         padding-left: 0;
         padding-right: 0;
       }
-      
+
       .fragrance-image-wrap {
-        height: 245px;
+        max-width: 100%;
         margin-bottom: 28px;
-      }
-
-      .fragrance-image {
-        max-height: 370px;
-        max-width: 250px;
-      }
-
-      .fragrance-image-wrap::after {
-        width: 120px;
-        height: 18px;
       }
     }
 
@@ -538,7 +500,7 @@
             <img
               src="/images/Ascend_Nov_2026.jpg"
               alt="ARRATIO Ascend fragrance bottle"
-              class="fragrance-image ascend-image"
+              class="fragrance-image"
             />
           </div>
 
@@ -600,8 +562,8 @@
           </p>
 
           <p class="fragrance-description">
-            Radiance opens with fresh green notes before unfolding into its true heart; an airy
-            bouquet of jasmine, muguet, violet, and delicate florals.
+            Radiance opens with fresh green notes before unfolding into its true heart;
+            an airy bouquet of jasmine, muguet, violet, and delicate florals.
             Subtle fruit adds brightness through the heart, while cedarwood
             and clean white musks create a smooth, grounded finish. Light,
             diffusive, and fresh, Radiance is designed around the clarity and
@@ -631,6 +593,7 @@
       <h2 class="section-title">ARRATIO</h2>
 
       <div class="about-copy">
+
         <p>
           ARRATIO is an independent fragrance project built around the process
           of composition. Each fragrance begins as an idea and develops through
@@ -643,6 +606,7 @@
           given to balance, performance, and the way each composition develops
           throughout its wear.
         </p>
+
       </div>
 
     </div>
@@ -662,6 +626,7 @@
       </p>
 
       <div class="social-links">
+
         <a
           href="https://www.instagram.com/arratio.fragrances/"
           target="_blank"
@@ -670,10 +635,10 @@
           Instagram
         </a>
 
-        <!-- Replace YOUR_EMAIL_HERE with the email you want public -->
         <a href="mailto:arratio.brand@gmail.com">
           Contact
         </a>
+
       </div>
 
     </div>
@@ -686,4 +651,5 @@
   </footer>
 
 </body>
+</html>
 </html>
